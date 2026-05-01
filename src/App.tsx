@@ -109,6 +109,7 @@ function App() {
     datasets: [
       {
         data: Object.values(categoryData),
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"],
       },
     ],
   };
@@ -127,6 +128,9 @@ function App() {
       {
         label: "Monthly Spending",
         data: Object.values(monthlyData),
+        fill: true,
+        borderColor: "rgb(75, 192, 85)",
+        backgroundColor: "rgba(75,192,192,0.2)",
       },
     ],
   };
@@ -135,10 +139,20 @@ function App() {
 
   return (
     <div className="container">
-      <h2>Expense Tracker</h2>
+      <h1>EXPENSE TRACKER</h1>
       
-      <Pie data={pieData} />
-      <Line data={lineData} />
+      <br></br>
+
+      <div className="chart-container">
+        <div className="chart-box">
+          <Line data={lineData} />
+          <canvas id="barChart"></canvas>
+        </div>
+        <div className="chart-box">
+          <Pie data={pieData} />
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
 
       <h3>Total: ${totalExpenses}</h3>
 
@@ -151,6 +165,7 @@ function App() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+
         {/* Title */}
         <input
           type="text"
@@ -190,9 +205,9 @@ function App() {
             exp.title.toLowerCase().includes(searchTerm.toLowerCase())
           )
           .map((exp) => (
-          <li key={exp.id}>
-            {exp.title} - ${exp.amount} ({exp.category})
-            <button onClick={() => deleteExpense(exp.id)}>Delete</button>
+          <li className="records" key={exp.id}>
+            {exp.title} | ${exp.amount} - ({exp.category})
+            <button className="delete-button" onClick={() => deleteExpense(exp.id)}>Delete</button>
           </li>
         ))}
       </ul>

@@ -50,5 +50,40 @@ button:hover {
 
 /* List */
 li {
+  text-align: left;
+  justify-self: space-between;
+  align-items: center;
   margin: 5px 0;
+}
+
+li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+li:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  max-height: 350px;
+}
+  
+.chart-box {
+  width: 35%;
+  min-width: 300px;
+}
+
+.records {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  text-indent: 10px;
+}
+
+.delete-button {
+  background: #f44336;
 }
