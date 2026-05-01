@@ -1,0 +1,54 @@
+/* Container */
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Form Row */
+.formRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Inputs + Dropdown */
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 20px;
+  font-size: 14px;
+}
+
+/* Make inputs wider */
+input {
+  width: 200px;
+}
+
+/* Dropdown width */
+select {
+  width: 200px;
+  height: 40px;
+}
+
+/* Button */
+button {
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+/* List */
+li {
+  margin: 5px 0;
+}
